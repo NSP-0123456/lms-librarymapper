@@ -1,0 +1,8 @@
+<extensions>
+  <plugins>
+    <plugin name="LibraryMapper" category="tools" creator="Chris / NSP-0123456" link="https://github.com/NSP-0123456/lms-librarymapper" maxTarget="*" minTarget="7.9" sha="7efe012b8c214007ebe6cd748be0c698b8bfeb89" url="https://raw.githubusercontent.com/NSP-0123456/lms-librarymapper/main/releases/LibraryMapper-0.1.0.zip" version="0.1.0">
+      <desc lang="EN">Map your large music library inside Lyrion: browse a virtual Genre\Artist\Year-Album layout with temporal (albums added recently) and quality (hi-res/CD/lossy) filters, simplify hundreds of raw genre tags into a few broad groups, and consolidate album artist spelling variants - all without touching a single file on disk. Includes an initialization phase, mapping validation and download/upload of mapping files from the plugin parameter page.</desc>
+      <title lang="EN">LibraryMapper</title>
+    </plugin>
+  </plugins>
+</extensions>
