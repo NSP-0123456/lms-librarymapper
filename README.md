@@ -16,19 +16,41 @@ The plugin is published as a plugin repository, so Lyrion installs it by itself
 (download → SHA1 check → replace → restart):
 
 1. Open your server's web UI → **Settings → Advanced → Plugins**
-2. At the bottom, in *Plugin repositories*, add:
+2. At the bottom, in *Plugin repositories*, add the address of the manifest:
    `https://raw.githubusercontent.com/NSP-0123456/lms-librarymapper/main/extensions.xml`
    then **Apply**
 3. Tick **LibraryMapper** in the list and **Apply** again (the page shows it under
    the repository you just added). Lyrion downloads the release, checks its SHA1
    and asks for a restart.
-4. Restart the server (the button is offered at the top of the same page).
+4. Restart the server (the button is offered at the top of the same page) — the
+   new version is only put in place at the next start.
 5. After the restart, open **Settings → Advanced → Plugins → LibraryMapper** and
    click *Initialize* — this scans the Lyrion library into the plugin's dedicated
    SQLite database and proposes the genre groups.
 
 If the plugin is already installed in an older version, it appears in the
 *Updates* section of the same page: tick it there and **Apply**.
+
+> The archive itself is served by jsdelivr, and the manifest points at it with the
+> immutable reference of the commit that holds it (so the SHA1 never changes).
+> The CDN of GitHub Pages (`raw.githubusercontent.com`) is not reachable from every
+> network; when it is not, use the address of the manifest on the CDN instead:
+> `https://cdn.jsdelivr.net/gh/NSP-0123456/lms-librarymapper@<commit>/extensions.xml`
+> (the commit is the one of the manifest, printed by the publish script).
+
+### The application
+
+The plugin is a real application: it is listed in the **Apps** menu of the skins
+(Material included) with its own icon, and the virtual tree opens from there.
+The contents of the application open on a server where **no player is connected**.
+
+The tile *Apps* of the home page of the Material skin is a different thing: it
+asks the server for the feed `myapps items`, and the server only answers that
+feed when a player is connected. On a headless server, turn on the option
+**"Combine 'Apps' and 'Radio'"** in the settings of the Material skin: the tile
+then uses the clientless command of the skin and shows the applications (the
+separate *Radio* tile disappears, the radio stations join the *Apps* menu).
+
 
 ### After the restart
 
