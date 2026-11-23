@@ -4,7 +4,7 @@ Map your large music library *inside* Lyrion Music Server, **without touching fi
 
 - Browse a virtual `Genre \ Artist \ Year - Album` layout as an app with categories
 - **Temporal filter**: albums added on the server in the last day / week / month / year
-- **Quality filter**: hi-res / CD / lossy
+- **Quality filter**: hi-res / CD / lossy / **1bit Hi-Res (DSF/DFF)**
 - Simplify hundreds of raw genre tags into 10–20 broad groups (semi-manual curation, then automatic application)
 - Consolidate album-artist spelling variants
 - Parameter page with an **initialization phase**, mapping **validation**, and **download/upload** of mapping files (JSON, `librarymapper-mapping` v1)
