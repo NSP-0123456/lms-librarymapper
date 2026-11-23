@@ -73,26 +73,28 @@ albums** link opens a limited draw of albums matching the choices — the
 listbox beside it picks the count (5 / 10 / 20 / 50 / 100). The draw opens
 as a level of its own and the walk carries on from there normally.
 
-## The choices of the tree
+## The line of the selections
 
-The first line of every level of "My Music > Simplified View" reads
-`Choices · <order> · <dates> · <quality> · <limit>`. It does **not** open the
-web page: it opens a small tree of the **choices themselves**, plain list
-items that every skin renders inside its own list (Material included, and
-Squeezer on Android, which cannot show a web page at all):
-
-- **Ordering / Date range / Quality / Count per level** — the values of the
-  group, with a tick on the one in use; picking one writes the preference the
-  parameter page writes, and the list is shown again with the tick moved.
-- **Expression** — a text entry in the skin's own input window; the typed
-  expression is stored and applied to the walk, with a *Clear expression* row
-  while one stands.
-- **Web page: filters and help** — the old browse page, at the end.
+The **last** line of every level of "My Music > Simplified View" reads
+`<order> · <dates> · <quality> · <limit>` — the choices in use, straight from
+the plugin's preferences. It opens the **browse page**, where the choices are
+made: the **Order** selector sets the sorting of the artists and of the
+albums, the separate **Group order** selector the order of the genre groups,
+and pressing **OK** writes the preferences of the plugin.
 
 **The choices are global**: they hold for the whole tree at once. The levels
 carry no choice of their own — each one reads the stored preferences when it
-is shown, so a pick made anywhere applies to the level the user came from and
-to every level shown afterwards (the browse page reads the same preferences).
+is fetched, so a pick made on the page applies to every level entered
+afterwards (the level the user came from included). The walk rows carry the
+path only, and the URL of the header line carries no choice either — a
+remembered link can never re-register an old value over the picks. One
+exception no server can lift: the **Back** of the Material skin re-serves the
+snapshot it kept of the previous level, without any request — that level keeps
+showing the old list until it is entered again.
+
+On top of the artist list of one genre the tree also offers a first row,
+**Selected albums** — the albums of that whole genre under the readings of
+the choices, whatever the artist.
 
 **Experimental** (off by default, parameter page): with *Open the page beside
 the list* ticked, the browse page opens in the Material skin as a **panel on
