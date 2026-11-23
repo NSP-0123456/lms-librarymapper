@@ -76,6 +76,13 @@ under its last name, a group under the name it carries**.
 A name that is not written in Latin letters is transliterated (Cyrillic,
 Hebrew, Japanese, Chinese), so that it is not left after the "z".
 
+## The number of items that are shown
+
+A level of the tree is cut at the limit of the plugin. The header of the tree
+shows the limit that is in use, and four entries under it change it without
+leaving the tree — **10**, **100**, **1000** and **unlimited**. The choice
+holds for the whole drill-down.
+
 ## Notes
 
 - The plugin is **query-only**: it never moves, renames or deletes any file on disk.
