@@ -89,6 +89,11 @@ Squeezer on Android, which cannot show a web page at all):
   while one stands.
 - **Web page: filters and help** — the old browse page, at the end.
 
+**The choices are global**: they hold for the whole tree at once. The levels
+carry no choice of their own — each one reads the stored preferences when it
+is shown, so a pick made anywhere applies to the level the user came from and
+to every level shown afterwards (the browse page reads the same preferences).
+
 **Experimental** (off by default, parameter page): with *Open the page beside
 the list* ticked, the browse page opens in the Material skin as a **panel on
 the right half of the window** instead of a fullscreen cover — a script on
