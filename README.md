@@ -66,9 +66,14 @@ separate *Radio* tile disappears, the radio stations join the *Apps* menu).
 
 The page of the application carries every choice of the walk in one form:
 the temporal and quality filters, the order of the artists and of the
-albums, the order of the groups, the number of items, a filter on the name
+albums (with an **Unsorted** choice — no sort at all; the selector also
+reads Unsorted while the expression carries a `sort:` term of its own), the
+order of the groups, the number of items, a filter on the name
 of the artist (transliterated when **Translit** is ticked) and a free
-**Expression** (`year:1980..1990 duration:>45:00 …`). The 🎲 **Random
+**Expression** (`year:1980..1990 duration:>45:00 genre:chamber
+sgenre:(Jazz,Pop) …` — `genre` matches the genre string the TAG carries as
+a case-insensitive regular expression, `sgenre` means the group of the
+Simplified View, the album is filed at). The 🎲 **Random
 albums** link opens a limited draw of albums matching the choices — the
 listbox beside it picks the count (5 / 10 / 20 / 50 / 100). The draw opens
 as a level of its own and the walk carries on from there normally.
