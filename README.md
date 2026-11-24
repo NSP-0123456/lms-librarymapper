@@ -71,9 +71,13 @@ reads Unsorted while the expression carries a `sort:` term of its own), the
 order of the groups, the number of items, a filter on the name
 of the artist (transliterated when **Translit** is ticked) and a free
 **Expression** (`year:1980..1990 duration:>45:00 genre:chamber
-sgenre:(Jazz,Pop) …` — `genre` matches the genre string the TAG carries as
-a case-insensitive regular expression, `sgenre` means the group of the
-Simplified View, the album is filed at). The 🎲 **Random
+sgenre:(Jazz,Pop) track:suite trackN:5 …` — `genre` matches the genre string
+the TAG carries as a case-insensitive regular expression, `sgenre` means the
+group of the Simplified View, the album is filed at; `track` keeps the albums
+that hold a track whose title matches (a regular expression) and `trackN`
+those that hold a track of the given number (a "1/20" tag is read as its
+first number) — when such an album is opened, only the matching tracks are
+shown). The 🎲 **Random
 albums** link opens a limited draw of albums matching the choices — the
 listbox beside it picks the count (5 / 10 / 20 / 50 / 100). The draw opens
 as a level of its own and the walk carries on from there normally.
@@ -118,6 +122,18 @@ under its last name, a group under the name it carries**.
     "Metallica"             -> "metallica"        (a group)
     "The Beatles"           -> "beatles"          (the leading article is skipped)
     "Miles Davis Quintet"   -> "miles davis"      (the ensemble word is skipped)
+    "Peyceré Trío"          -> "peycere"          (trío is trio, accented or not)
+
+The ensemble words are known in several languages — *trio* and its cousins in
+English, French (quatuor, quintette), German (quartett), Spanish (duo, cuarteto),
+Italian (quartetto), Dutch, the Scandinavian, Polish (kwartet), Czech, Hungarian,
+Finnish, the Russian transliterations…, the orchestra words (orchestra, orchester,
+orquesta, orkester…), the band, group and choir words (band, banda, conjunto,
+zespół, yhtye, chor, koor…), *big band*, *symphony*, *philharmonic* and the guest
+words (feat., and, with). They are matched with or without their accent, so
+`Peyceré Trío` is filed under **P**, not under **T**. One exception: when the
+word is the whole name — a group called just `Trio` (a French group) or `Duet`
+(a French jazz duo) — nothing is skipped and the word is the key.
 
 A name that is not written in Latin letters is transliterated (Cyrillic,
 Hebrew, Japanese, Chinese), so that it is not left after the "z".
