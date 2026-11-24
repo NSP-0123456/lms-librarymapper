@@ -125,21 +125,32 @@ shows the limit that is in use, and it opens the browse page where **10**,
 can be changed. The choice holds for the whole drill-down, and the page opens
 on the level the header line is on.
 
-## The albums that carry no genre
+## The albums that carry no genre, and the NeedApproval group
 
 An album without any real genre tag is not lost: it gets a **derived group**
 shown with a low-confidence marker `(?)` after its year — the group most of the
 artist's other albums stand in, or, for a compilation (Various Artists), the
 group of the words of its title. An album without any clue stays in Unsorted.
+
+A **tagged** spelling that no rule recognizes lands in the **NeedApproval**
+group (also marked `(?)`): it waits there until you decide. Approving the
+spelling on the parameter page moves its albums out at once.
+
 The broad groups themselves come from keyword rules (*blues*, *blues rock*,
 *chicago blues* all stand in **Blues**); the rules match whole words of the
-normalized spelling (without accents, without punctuation). Your own rules can
-be **pinned over the shipped ones** on the parameter page, one line per group:
+normalized spelling (without accents, without punctuation). Your own rules
+replace or extend the shipped ones on the parameter page, one line per group,
+applied from top to bottom (the first line that matches wins):
 
     Blues : blues
     Musette : bal musette
+    My Favorites :
 
-The list is read from top to bottom (the first line that matches wins) and
+A line **without words** is the *fallback*: it closes the order, and every
+spelling no line matched lands in its group (by default `NeedApproval`). A
+list with its own fallback line is applied alone; a list without one plays in
+front of the shipped rules. The list is **downloadable**
+(`plugins/LibraryMapper/genre-rules.txt`) and **uploadable** back, and it
 travels in the JSON mapping file, so it carries over to another server.
 
 ## Notes
