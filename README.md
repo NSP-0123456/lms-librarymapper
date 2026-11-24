@@ -125,6 +125,23 @@ shows the limit that is in use, and it opens the browse page where **10**,
 can be changed. The choice holds for the whole drill-down, and the page opens
 on the level the header line is on.
 
+## The albums that carry no genre
+
+An album without any real genre tag is not lost: it gets a **derived group**
+shown with a low-confidence marker `(?)` after its year — the group most of the
+artist's other albums stand in, or, for a compilation (Various Artists), the
+group of the words of its title. An album without any clue stays in Unsorted.
+The broad groups themselves come from keyword rules (*blues*, *blues rock*,
+*chicago blues* all stand in **Blues**); the rules match whole words of the
+normalized spelling (without accents, without punctuation). Your own rules can
+be **pinned over the shipped ones** on the parameter page, one line per group:
+
+    Blues : blues
+    Musette : bal musette
+
+The list is read from top to bottom (the first line that matches wins) and
+travels in the JSON mapping file, so it carries over to another server.
+
 ## Notes
 
 - The plugin is **query-only**: it never moves, renames or deletes any file on disk.
