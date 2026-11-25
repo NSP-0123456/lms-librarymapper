@@ -83,6 +83,24 @@ albums** link opens a limited draw of albums matching the choices — the
 listbox beside it picks the count (5 / 10 / 20 / 50 / 100). The draw opens
 as a level of its own and the walk carries on from there normally.
 
+## The album rows
+
+Both the browse page and **My Music → Simplified View** show the original genre
+and the original album artist on a second line under the album title, with a
+small drawn arrow between them. Hover an album cover on the page (or focus it
+with the keyboard) for a compact **two-column card** of every original tag as
+`NAME:value`, sorted alphabetically; the tree shows the same list as a flat
+tooltip. Repeated tags are all kept — an album whose tracks carry different
+`GENRE` spellings shows every one of them. `SV_GENRE`, `SV_ARTIST` and
+`SV_MODE` are the **virtual** Simplified View values, not raw tags.
+
+Every track row carries `Playing`, `#N` (its index in the queue) or `------`;
+the `STATUS` of an album uses `Playing` > the index of the album's **first**
+queued track > `------`. The page follows the queue live, the tree reads it when
+the level is fetched. A fresh library scan fills the new `album_tags` store
+with every raw genre spelling; until then a server upgraded from an earlier
+release shows the one genre it already had.
+
 ## The line of the selections
 
 The **last** line of every level of "My Music > Simplified View" reads
@@ -157,7 +175,14 @@ A **tagged** spelling that no rule recognizes uses the same fallback (marked
 `(?)`). Approving the spelling on the parameter page moves its albums out at once.
 
 Enable **Show the Uncategorised fallback** on the parameter page to display this
-virtual genre. It covers both missing genre tags and unmapped genres, not only
+virtual genre — or, quicker, press the **Uncategorised** chip in the header box
+of the browse page (beside **Help** and **Playlist**). Its ring fills when the
+group is shown; the chip writes the same preference the parameter page and the
+**My Music** tree read, so the browse page, the tree and the settings checkbox
+stay in step. The group is a top-level entry: on a deeper level the chip keeps
+its state, and the group appears when the list of the genres is opened again.
+
+It covers both missing genre tags and unmapped genres, not only
 compilations. Albums without an artist credit and genuine compilations (including
 the usual `VA`, `Various`, and `Sampler` spellings) share the **Various Artists**
 virtual artist.
