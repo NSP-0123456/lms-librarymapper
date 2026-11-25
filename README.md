@@ -147,16 +147,20 @@ shows the limit that is in use, and it opens the browse page where **10**,
 can be changed. The choice holds for the whole drill-down, and the page opens
 on the level the header line is on.
 
-## The albums that carry no genre, and the NeedApproval group
+## The Uncategorised fallback
 
 An album without any real genre tag is not lost: it gets a **derived group**
 shown with a low-confidence marker `(?)` after its year — the group most of the
 artist's other albums stand in, or, for a compilation (Various Artists), the
-group of the words of its title. An album without any clue stays in Unsorted.
+group of the words of its title. An album without any clue uses **Uncategorised**.
+A **tagged** spelling that no rule recognizes uses the same fallback (marked
+`(?)`). Approving the spelling on the parameter page moves its albums out at once.
 
-A **tagged** spelling that no rule recognizes lands in the **NeedApproval**
-group (also marked `(?)`): it waits there until you decide. Approving the
-spelling on the parameter page moves its albums out at once.
+Enable **Show the Uncategorised fallback** on the parameter page to display this
+virtual genre. It covers both missing genre tags and unmapped genres, not only
+compilations. Albums without an artist credit and genuine compilations (including
+the usual `VA`, `Various`, and `Sampler` spellings) share the **Various Artists**
+virtual artist.
 
 The broad groups themselves come from keyword rules (*blues*, *blues rock*,
 *chicago blues* all stand in **Blues**); the rules match whole words of the
@@ -169,7 +173,7 @@ applied from top to bottom (the first line that matches wins):
     My Favorites :
 
 A line **without words** is the *fallback*: it closes the order, and every
-spelling no line matched lands in its group (by default `NeedApproval`). A
+spelling no line matched lands in its group (by default **Uncategorised**). A
 list with its own fallback line is applied alone; a list without one plays in
 front of the shipped rules. The list is **downloadable**
 (`plugins/LibraryMapper/genre-rules.txt`) and **uploadable** back, and it
