@@ -26,7 +26,8 @@ The plugin is published as a plugin repository, so Lyrion installs it by itself
    new version is only put in place at the next start.
 5. After the restart, open **Settings → Advanced → Plugins → LibraryMapper** and
    click *Initialize* — this scans the Lyrion library into the plugin's dedicated
-   SQLite database and proposes the genre groups.
+   SQLite database and proposes the genre groups. Later LMS library scans refresh
+   this cache automatically when they finish.
 
 If the plugin is already installed in an older version, it appears in the
 *Updates* section of the same page: tick it there and **Apply**.
