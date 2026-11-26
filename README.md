@@ -42,7 +42,10 @@ If the plugin is already installed in an older version, it appears in the
 ### The application
 
 The plugin is a real application: it is listed in the **Apps** menu of the skins
-(Material included) with its own icon, and the virtual tree opens from there.
+(Material included) with its own icon. The application is a **shortcut to the
+choices** of the player (the menu *Filters & sorting*: order, dates, quality,
+...) and nothing more; the virtual tree itself opens from **My Music >
+Simplified View**.
 The contents of the application open on a server where **no player is connected**.
 
 The tile *Apps* of the home page of the Material skin is a different thing: it
@@ -148,7 +151,7 @@ of the selections. It opens a native menu titled after the player:
 
 - one row per choice list (order, group order, dates, quality, items per list,
   random draw): it opens the list of the values, the current one is marked ✓;
-  a pick writes it for the player and goes back to the menu
+  a pick writes it for the player and goes straight back to the list, reloaded (so the Back button of Squeezer never shows a stale value)
 - two switches (Uncategorised, ignore accents) that flip in place
 - the expression, a text input, with a *Clear* row when one is set
 - *Reset this player to the server defaults*, when the player has values of its own
