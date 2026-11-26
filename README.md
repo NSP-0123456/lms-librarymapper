@@ -131,6 +131,40 @@ the page docks the dialog beside the browse list; nothing is modified in the
 skin, and the page falls back to the plain fullscreen window when the trick
 cannot work.
 
+## Choices per player, and the native menu (Squeezer)
+
+Every choice of the walk (album order, group order, dates, quality, items per
+list, random draw, Uncategorised, ignore accents, expression) belongs to the
+**player that asks**: a player keeps its own values (client preferences), a
+player with none uses the values of the server — the ones the settings page
+edits, which are therefore *the defaults of the players*. With no player (the
+CLI, a headless server, a page opened without a player) the server values are
+read and written.
+
+The native clients (Squeezer on Android, the jive players) show no HTML: the
+line of the selections and the settings page do nothing there. Every level of
+the tree therefore carries a row **⚙ Filters & sorting** just before the line
+of the selections. It opens a native menu titled after the player:
+
+- one row per choice list (order, group order, dates, quality, items per list,
+  random draw): it opens the list of the values, the current one is marked ✓;
+  a pick writes it for the player and goes back to the menu
+- two switches (Uncategorised, ignore accents) that flip in place
+- the expression, a text input, with a *Clear* row when one is set
+- *Reset this player to the server defaults*, when the player has values of its own
+- the first row (← title) goes back to the list, which reads the new choices
+
+The menu travels in plain-ASCII parameters carried like `lm_path`:
+`lm_menu` (`sel` | `sel.<group>`), `lm_set` (`<group>.<value>` | `reset`) and
+`lm_expr_set` (the typed expression). The groups: `o` order, `g` group order,
+`t` dates, `q` quality, `c` items per list, `r` random draw, `u` Uncategorised,
+`f` ignore accents, `e` expression. From the CLI:
+
+    librarymapper items 0 50 lm_menu:sel
+    <playerid> librarymapper items 0 50 lm_menu:sel.q lm_set:q.hires
+
+The settings page (scan, mapping upload, genre rules, icons) stays web-only:
+open `http://<server>:9001/settings/` in the browser of the phone.
 ## The order of the artists
 
 The artists are not sorted by the name as it is written: **a person is filed
